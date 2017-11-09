@@ -16,23 +16,34 @@ PODS:
     - AFNetworking/NSURLSession
   - BATabBarController (0.1.4):
     - Masonry
-  - Masonry (1.1.0)
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
+  - DZNEmptyDataSet (1.8.1)
+  - Masonry (1.0.2)
+  - pop (1.0.10)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - AFNetworking
-  - BATabBarController
-  - Masonry
-  - SDWebImage
+  - AFNetworking (~> 3.1.0)
+  - BATabBarController (~> 0.1.4)
+  - DZNEmptyDataSet (~> 1.8.1)
+  - Masonry (~> 1.0.2)
+  - pop (~> 1.0.10)
+  - SDWebImage (~> 4.0.0)
+  - YYKit (~> 1.0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BATabBarController: 7bd7a21d65a1df9f08586adb17622da1c58f44a5
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: bfa7cf6e9dbaa098b95e261eb0ced9632306e669
+PODFILE CHECKSUM: 10b879a2828d657055df0041087fda21aae4ac5b
 
 COCOAPODS: 1.3.1
