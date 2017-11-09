@@ -10,5 +10,6 @@ pod 'SDWebImage', '~> 4.0.0'
 pod 'pop', '~> 1.0.10'
 pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'YYKit', '~> 1.0.9'
+#pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'
 
 end

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B839CDBBC8E01CC1F0385A00 /* libPods-bigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCD7C6F0ED8B956FD27071D /* libPods-bigger.a */; };
+		FB9214F91FB3F9440075A403 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214F51FB3F9430075A403 /* PPNetworkCache.m */; };
+		FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */; };
+		FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214FE1FB3FAC20075A403 /* HttpRequestManager.m */; };
 		FBCCD65D1FB1826000C75C12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCCD65C1FB1826000C75C12 /* AppDelegate.m */; };
 		FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCCD65F1FB1826000C75C12 /* ViewController.m */; };
 		FBCCD6631FB1826000C75C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCCD6611FB1826000C75C12 /* Main.storyboard */; };
@@ -20,6 +23,12 @@
 		3B97738E39598382FACF2C94 /* Pods-bigger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigger.release.xcconfig"; path = "Pods/Target Support Files/Pods-bigger/Pods-bigger.release.xcconfig"; sourceTree = "<group>"; };
 		4DCD7C6F0ED8B956FD27071D /* libPods-bigger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB90D7358FB63C9C367B9E8A /* Pods-bigger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bigger/Pods-bigger.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9214F51FB3F9430075A403 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		FB9214F61FB3F9430075A403 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		FB9214F81FB3F9440075A403 /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		FB9214FD1FB3FAC20075A403 /* HttpRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
+		FB9214FE1FB3FAC20075A403 /* HttpRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
 		FBCCD6581FB1826000C75C12 /* bigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCCD65B1FB1826000C75C12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBCCD65C1FB1826000C75C12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +70,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FB9214F41FB3F9020075A403 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FB9214FC1FB3FA7F0075A403 /* NetworkManager */,
+				FB9214FB1FB3FA560075A403 /* NetworkHelper */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FB9214FB1FB3FA560075A403 /* NetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				FB9214F81FB3F9440075A403 /* PPNetworkCache.h */,
+				FB9214F51FB3F9430075A403 /* PPNetworkCache.m */,
+				FB9214F61FB3F9430075A403 /* PPNetworkHelper.h */,
+				FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */,
+			);
+			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
+		FB9214FC1FB3FA7F0075A403 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FB9214FD1FB3FAC20075A403 /* HttpRequestManager.h */,
+				FB9214FE1FB3FAC20075A403 /* HttpRequestManager.m */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		FBCCD64F1FB1826000C75C12 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +120,7 @@
 		FBCCD65A1FB1826000C75C12 /* bigger */ = {
 			isa = PBXGroup;
 			children = (
+				FB9214F41FB3F9020075A403 /* Network */,
 				FBCCD65B1FB1826000C75C12 /* AppDelegate.h */,
 				FBCCD65C1FB1826000C75C12 /* AppDelegate.m */,
 				FBCCD65E1FB1826000C75C12 /* ViewController.h */,
@@ -221,8 +260,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */,
+				FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */,
+				FB9214F91FB3F9440075A403 /* PPNetworkCache.m in Sources */,
 				FBCCD66B1FB1826000C75C12 /* main.m in Sources */,
 				FBCCD65D1FB1826000C75C12 /* AppDelegate.m in Sources */,
+				FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
