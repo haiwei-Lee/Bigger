@@ -10,6 +10,9 @@
 #import "BATabBarController.h"
 #import "BATabBarItem.h"
 #import "YYKit.h"
+#import "ShopViewController.h"
+#import "CreditViewController.h"
+#import "MineViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) BATabBarController* vc;
@@ -22,31 +25,31 @@
     [super viewDidLoad];
     
     BATabBarItem *tabBarItem, *tabBarItem2, *tabBarItem3;
-    UIViewController *vc1 = [[UIViewController alloc] init];
-    UIViewController *vc2 = [[UIViewController alloc] init];
-    UIViewController *vc3 = [[UIViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor colorWithHexString:@"#222B30"];
-    vc2.view.backgroundColor = [UIColor colorWithHexString:@"#222B30"];
-    vc3.view.backgroundColor = [UIColor colorWithHexString:@"#222B30"];
     
     
-    NSMutableAttributedString *option1 = [[NSMutableAttributedString alloc] initWithString:@"Feed"];
-    [option1 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#F0F2F6"] range:NSMakeRange(0,option1.length)];
+    UIViewController *shopVc = [[ShopViewController alloc] init];
+    UIViewController *creditVc = [[CreditViewController alloc] init];
+    UIViewController *mineVc = [[MineViewController alloc] init];
     
-    tabBarItem = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"icon1_unselected"] selectedImage:[UIImage imageNamed:@"icon1"] title:option1];
+    UINavigationController *shopNav = [[UINavigationController alloc]initWithRootViewController:shopVc];
+    UINavigationController *creditNav = [[UINavigationController alloc]initWithRootViewController:creditVc];
+    UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVc];
     
-//    BATabBarBadge *badge = [[BATabBarBadge alloc] initWithValue:@22 backgroundColor:[UIColor redColor]];
-//    tabBarItem.badge = badge;
     
-    NSMutableAttributedString *option2 = [[NSMutableAttributedString alloc] initWithString:@"Home"];
-    [option2 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#F0F2F6"] range:NSMakeRange(0,option2.length)];
+    //    NSMutableAttributedString *option1 = [[NSMutableAttributedString alloc] initWithString:@"超市"];
+    //    [option1 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#ffffff"] range:NSMakeRange(0,option1.length)];
     
-    tabBarItem2 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"icon2_unselected"] selectedImage:[UIImage imageNamed:@"icon2"] title:option2];
+    tabBarItem = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"shop_n"] selectedImage:[UIImage imageNamed:@"shop_c"]];
     
-    NSMutableAttributedString * option3 = [[NSMutableAttributedString alloc] initWithString:@"Profile"];
-    [option3 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#F0F2F6"] range:NSMakeRange(0,option3.length)];
+    //    NSMutableAttributedString *option2 = [[NSMutableAttributedString alloc] initWithString:@"信用"];
+    //    [option2 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#ffffff"] range:NSMakeRange(0,option2.length)];
     
-    tabBarItem3 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"icon3_unselected"] selectedImage:[UIImage imageNamed:@"icon3"] title:option3];
+    tabBarItem2 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"credit_n"] selectedImage:[UIImage imageNamed:@"credit_c"]];
+    
+    //    NSMutableAttributedString * option3 = [[NSMutableAttributedString alloc] initWithString:@"我"];
+    //    [option3 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#ffffff"] range:NSMakeRange(0,option3.length)];
+    
+    tabBarItem3 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"mine_n"] selectedImage:[UIImage imageNamed:@"mine_c"]];
     
     
     self.vc = [[BATabBarController alloc] init];
@@ -55,7 +58,7 @@
     self.vc.tabBarBackgroundColor = [UIColor blackColor];
     
     //tab bar item stroke color example
-    self.vc.tabBarItemStrokeColor = [UIColor redColor];
+    self.vc.tabBarItemStrokeColor = [UIColor colorWithHexString:@"#1296db"];
     
     //Tab bar line width example
     self.vc.tabBarItemLineWidth = 1.0;
@@ -65,11 +68,11 @@
     //        self.vc.tabBar.hidden = YES;
     
     
-    self.vc.viewControllers = @[vc1,vc2,vc3];
+    self.vc.viewControllers = @[shopNav,creditNav,mineNav];
     self.vc.tabBarItems = @[tabBarItem,tabBarItem2,tabBarItem3];
-    [self.vc setSelectedViewController:vc2 animated:NO];
+    [self.vc setSelectedViewController:shopNav animated:NO];
     
-//    self.vc.delegate = self;
+    //    self.vc.delegate = self;
     [self.view addSubview:self.vc.view];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -82,3 +85,4 @@
 
 
 @end
+
