@@ -15,6 +15,8 @@
 		FB3A52401FB6A1AB00A17830 /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3A523F1FB6A1AB00A17830 /* LoginTextField.m */; };
 		FB3A52431FB6C3F700A17830 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3A52421FB6C3F700A17830 /* RegisterViewController.m */; };
 		FB3A52481FB6C77400A17830 /* UIButton+UCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3A52461FB6C77400A17830 /* UIButton+UCountDown.m */; };
+		FB3A524E1FB6D32B00A17830 /* UITextField+UFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3A524A1FB6D32B00A17830 /* UITextField+UFormat.m */; };
+		FB3A524F1FB6D32B00A17830 /* UITextField+UInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3A524D1FB6D32B00A17830 /* UITextField+UInputLimit.m */; };
 		FB9214F91FB3F9440075A403 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214F51FB3F9430075A403 /* PPNetworkCache.m */; };
 		FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */; };
 		FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214FE1FB3FAC20075A403 /* HttpRequestManager.m */; };
@@ -45,6 +47,10 @@
 		FB3A52421FB6C3F700A17830 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		FB3A52461FB6C77400A17830 /* UIButton+UCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+UCountDown.m"; path = "bigger/Src/Login/UIButton+UCountDown.m"; sourceTree = SOURCE_ROOT; };
 		FB3A52471FB6C77400A17830 /* UIButton+UCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+UCountDown.h"; path = "bigger/Src/Login/UIButton+UCountDown.h"; sourceTree = SOURCE_ROOT; };
+		FB3A524A1FB6D32B00A17830 /* UITextField+UFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+UFormat.m"; sourceTree = "<group>"; };
+		FB3A524B1FB6D32B00A17830 /* UITextField+UFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+UFormat.h"; sourceTree = "<group>"; };
+		FB3A524C1FB6D32B00A17830 /* UITextField+UInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+UInputLimit.h"; sourceTree = "<group>"; };
+		FB3A524D1FB6D32B00A17830 /* UITextField+UInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+UInputLimit.m"; sourceTree = "<group>"; };
 		FB9214F51FB3F9430075A403 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		FB9214F61FB3F9430075A403 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
 		FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 		E196CC7D1FB44FA500CE0C98 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				FB3A52491FB6D31B00A17830 /* ClassExt */,
 				FB3A523C1FB69DB700A17830 /* Config */,
 				FB3A52381FB6983200A17830 /* Login */,
 				E196CC7E1FB44FA500CE0C98 /* Main */,
@@ -168,6 +175,17 @@
 				FB3A523F1FB6A1AB00A17830 /* LoginTextField.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FB3A52491FB6D31B00A17830 /* ClassExt */ = {
+			isa = PBXGroup;
+			children = (
+				FB3A524B1FB6D32B00A17830 /* UITextField+UFormat.h */,
+				FB3A524A1FB6D32B00A17830 /* UITextField+UFormat.m */,
+				FB3A524C1FB6D32B00A17830 /* UITextField+UInputLimit.h */,
+				FB3A524D1FB6D32B00A17830 /* UITextField+UInputLimit.m */,
+			);
+			path = ClassExt;
 			sourceTree = "<group>";
 		};
 		FB9214F41FB3F9020075A403 /* Network */ = {
@@ -311,9 +329,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-bigger/Pods-bigger-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3A524E1FB6D32B00A17830 /* UITextField+UFormat.m in Sources */,
 				FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */,
 				FB3A52481FB6C77400A17830 /* UIButton+UCountDown.m in Sources */,
 				FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */,
@@ -371,6 +393,7 @@
 				FB3A52431FB6C3F700A17830 /* RegisterViewController.m in Sources */,
 				FB3A52401FB6A1AB00A17830 /* LoginTextField.m in Sources */,
 				FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */,
+				FB3A524F1FB6D32B00A17830 /* UITextField+UInputLimit.m in Sources */,
 				E196CC891FB44FA500CE0C98 /* ShopViewController.m in Sources */,
 				E196CC881FB44FA500CE0C98 /* MineViewController.m in Sources */,
 			);
