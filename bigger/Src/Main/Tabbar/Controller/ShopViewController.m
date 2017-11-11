@@ -10,6 +10,8 @@
 #import "GlobalDefine.h"
 #import "ProductModel.h"
 #import "DetailWebViewController.h"
+#import "MineViewController.h"
+#import "LoginViewController.h"
 
 @interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -71,6 +73,19 @@
     [_hotView.layer setBorderWidth:1.0f];
     [_hotView.layer setBorderColor:HexColor(0x999999ff).CGColor];
     [self.view addSubview:_hotView];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(tap)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    // Do any additional setup after loading the view.
+}
+- (void)tap{
+//    MineViewController * vc =  [MineViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    self.navigationController.toolbarHidden = YES;
+//    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)shopTableViewProductList{
