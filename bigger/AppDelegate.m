@@ -8,7 +8,13 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "CYLTabBarController.h"
+#import "ShopViewController.h"
+#import "CreditViewController.h"
+#import "MineViewController.h"
 @interface AppDelegate ()
+
+@property (nonatomic, strong) CYLTabBarController * tabBarController;
 
 @end
 
@@ -19,12 +25,64 @@
     UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window = window;
     window.backgroundColor = [UIColor whiteColor];
-    UINavigationController * navigationController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
-    window.rootViewController = navigationController;
+    [self setupViewControllers];
+    window.rootViewController = self.tabBarController;
     [window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
+
+- (void)setupViewControllers {
+    ShopViewController *firstViewController = [[ShopViewController alloc] init];
+    UIViewController *firstNavigationController = [[UINavigationController alloc]
+                                                   initWithRootViewController:firstViewController];
+    
+    CreditViewController *secondViewController = [[CreditViewController alloc] init];
+    UIViewController *secondNavigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:secondViewController];
+    MineViewController *thirdViewController = [[MineViewController alloc] init];
+    UIViewController *thirdNavigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:thirdViewController];
+    
+    
+    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    [self customizeTabBarForController:tabBarController];
+    
+    [tabBarController setViewControllers:@[
+                                           firstNavigationController,
+                                           secondNavigationController,
+                                           thirdNavigationController
+                                           ]];
+    self.tabBarController = tabBarController;
+}
+
+/*
+ *
+ 在`-setViewControllers:`之前设置TabBar的属性，
+ *
+ */
+- (void)customizeTabBarForController:(CYLTabBarController *)tabBarController {
+    
+    NSDictionary *dict1 = @{
+                            CYLTabBarItemTitle : @"超市",
+                            CYLTabBarItemImage : @"shop_n",
+                            CYLTabBarItemSelectedImage : @"shop_c",
+                            };
+    NSDictionary *dict2 = @{
+                            CYLTabBarItemTitle : @"信用",
+                            CYLTabBarItemImage : @"credit_n",
+                            CYLTabBarItemSelectedImage : @"credit_c",
+                            };
+    NSDictionary *dict3 = @{
+                            CYLTabBarItemTitle : @"我",
+                            CYLTabBarItemImage : @"mine_n",
+                            CYLTabBarItemSelectedImage : @"mine_c",
+                            };
+    
+    NSArray *tabBarItemsAttributes = @[ dict1, dict2 ,dict3];
+    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -28,7 +28,8 @@
 //    MineViewController * vc =  [MineViewController new];
 //    [self.navigationController pushViewController:vc animated:YES];
 //    self.navigationController.toolbarHidden = YES;
-//    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
+    UINavigationController * loginNavigationController = [[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
+    [self.navigationController presentViewController:loginNavigationController animated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

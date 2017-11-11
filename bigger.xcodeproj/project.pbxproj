@@ -21,7 +21,6 @@
 		FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214F71FB3F9430075A403 /* PPNetworkHelper.m */; };
 		FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9214FE1FB3FAC20075A403 /* HttpRequestManager.m */; };
 		FBCCD65D1FB1826000C75C12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCCD65C1FB1826000C75C12 /* AppDelegate.m */; };
-		FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCCD65F1FB1826000C75C12 /* ViewController.m */; };
 		FBCCD6631FB1826000C75C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCCD6611FB1826000C75C12 /* Main.storyboard */; };
 		FBCCD6651FB1826000C75C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCCD6641FB1826000C75C12 /* Assets.xcassets */; };
 		FBCCD6681FB1826000C75C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCCD6661FB1826000C75C12 /* LaunchScreen.storyboard */; };
@@ -60,8 +59,6 @@
 		FBCCD6581FB1826000C75C12 /* bigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCCD65B1FB1826000C75C12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBCCD65C1FB1826000C75C12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FBCCD65E1FB1826000C75C12 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FBCCD65F1FB1826000C75C12 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FBCCD6621FB1826000C75C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBCCD6641FB1826000C75C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBCCD6671FB1826000C75C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -242,8 +239,6 @@
 				FB9214F41FB3F9020075A403 /* Network */,
 				FBCCD65B1FB1826000C75C12 /* AppDelegate.h */,
 				FBCCD65C1FB1826000C75C12 /* AppDelegate.m */,
-				FBCCD65E1FB1826000C75C12 /* ViewController.h */,
-				FBCCD65F1FB1826000C75C12 /* ViewController.m */,
 				FBCCD6611FB1826000C75C12 /* Main.storyboard */,
 				FBCCD6641FB1826000C75C12 /* Assets.xcassets */,
 				FBCCD6661FB1826000C75C12 /* LaunchScreen.storyboard */,
@@ -382,7 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3A524E1FB6D32B00A17830 /* UITextField+UFormat.m in Sources */,
-				FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */,
 				FB3A52481FB6C77400A17830 /* UIButton+UCountDown.m in Sources */,
 				FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */,
 				FB9214F91FB3F9440075A403 /* PPNetworkCache.m in Sources */,

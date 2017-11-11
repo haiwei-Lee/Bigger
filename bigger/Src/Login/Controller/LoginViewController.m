@@ -34,6 +34,8 @@
     self.title = @"登陆";
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStyleDone target:self action:@selector(registerSys)];
     self.navigationItem.rightBarButtonItem = anotherButton;
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStyleDone target:self action:@selector(close)];
+    self.navigationItem.leftBarButtonItem = leftButton;
     [self.view addSubview:self.logoImageView];
     [self.view addSubview:self.phoneTextField];
     [self.view addSubview:self.passwordTextField];
@@ -91,6 +93,10 @@
 
 - (void)registerSys{
     [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
+}
+
+-(void)close{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
