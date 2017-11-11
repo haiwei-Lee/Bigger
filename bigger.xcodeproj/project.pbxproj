@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B839CDBBC8E01CC1F0385A00 /* libPods-bigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCD7C6F0ED8B956FD27071D /* libPods-bigger.a */; };
+		E11EAD0F1FB5940500568131 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E11EAD0E1FB5940500568131 /* ProductModel.m */; };
+		E11EAD121FB69BF900568131 /* DetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11EAD111FB69BF900568131 /* DetailWebViewController.m */; };
 		E196CC871FB44FA500CE0C98 /* CreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC821FB44FA500CE0C98 /* CreditViewController.m */; };
 		E196CC881FB44FA500CE0C98 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC841FB44FA500CE0C98 /* MineViewController.m */; };
 		E196CC891FB44FA500CE0C98 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC861FB44FA500CE0C98 /* ShopViewController.m */; };
@@ -30,6 +32,11 @@
 		3B97738E39598382FACF2C94 /* Pods-bigger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigger.release.xcconfig"; path = "Pods/Target Support Files/Pods-bigger/Pods-bigger.release.xcconfig"; sourceTree = "<group>"; };
 		4DCD7C6F0ED8B956FD27071D /* libPods-bigger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB90D7358FB63C9C367B9E8A /* Pods-bigger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bigger/Pods-bigger.debug.xcconfig"; sourceTree = "<group>"; };
+		E11EAD0A1FB5530F00568131 /* GlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
+		E11EAD0D1FB5940500568131 /* ProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		E11EAD0E1FB5940500568131 /* ProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		E11EAD101FB69BF900568131 /* DetailWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailWebViewController.h; sourceTree = "<group>"; };
+		E11EAD111FB69BF900568131 /* DetailWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailWebViewController.m; sourceTree = "<group>"; };
 		E196CC811FB44FA500CE0C98 /* CreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditViewController.h; sourceTree = "<group>"; };
 		E196CC821FB44FA500CE0C98 /* CreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditViewController.m; sourceTree = "<group>"; };
 		E196CC831FB44FA500CE0C98 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -92,9 +99,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E11EAD091FB552E900568131 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E11EAD0A1FB5530F00568131 /* GlobalDefine.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		E11EAD0B1FB58ED100568131 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E11EAD0D1FB5940500568131 /* ProductModel.h */,
+				E11EAD0E1FB5940500568131 /* ProductModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E11EAD0C1FB58ED100568131 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E196CC7D1FB44FA500CE0C98 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				E11EAD091FB552E900568131 /* Constant */,
 				FB3A523C1FB69DB700A17830 /* Config */,
 				FB3A52381FB6983200A17830 /* Login */,
 				E196CC7E1FB44FA500CE0C98 /* Main */,
@@ -113,6 +145,8 @@
 		E196CC7F1FB44FA500CE0C98 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				E11EAD0B1FB58ED100568131 /* Models */,
+				E11EAD0C1FB58ED100568131 /* Views */,
 				E196CC801FB44FA500CE0C98 /* Controller */,
 			);
 			path = Tabbar;
@@ -127,6 +161,8 @@
 				E196CC841FB44FA500CE0C98 /* MineViewController.m */,
 				E196CC851FB44FA500CE0C98 /* ShopViewController.h */,
 				E196CC861FB44FA500CE0C98 /* ShopViewController.m */,
+				E11EAD101FB69BF900568131 /* DetailWebViewController.h */,
+				E11EAD111FB69BF900568131 /* DetailWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,7 +407,9 @@
 				FB3A52431FB6C3F700A17830 /* RegisterViewController.m in Sources */,
 				FB3A52401FB6A1AB00A17830 /* LoginTextField.m in Sources */,
 				FB9214FF1FB3FAC20075A403 /* HttpRequestManager.m in Sources */,
+				E11EAD0F1FB5940500568131 /* ProductModel.m in Sources */,
 				E196CC891FB44FA500CE0C98 /* ShopViewController.m in Sources */,
+				E11EAD121FB69BF900568131 /* DetailWebViewController.m in Sources */,
 				E196CC881FB44FA500CE0C98 /* MineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,13 +545,15 @@
 			baseConfigurationReference = BB90D7358FB63C9C367B9E8A /* Pods-bigger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7K8LX7C62Y;
+				DEVELOPMENT_TEAM = 263XYMC5WK;
 				INFOPLIST_FILE = bigger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandora.bigger.big;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandora.bigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 			};
@@ -524,13 +564,15 @@
 			baseConfigurationReference = 3B97738E39598382FACF2C94 /* Pods-bigger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7K8LX7C62Y;
+				DEVELOPMENT_TEAM = 263XYMC5WK;
 				INFOPLIST_FILE = bigger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandora.bigger.big;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandora.bigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 			};

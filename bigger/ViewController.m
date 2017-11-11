@@ -28,11 +28,11 @@
     
     
     UIViewController *shopVc = [[ShopViewController alloc] init];
-    UIViewController *creditVc = [[CreditViewController alloc] init];
+//    UIViewController *creditVc = [[CreditViewController alloc] init];
     UIViewController *mineVc = [[MineViewController alloc] init];
     
     UINavigationController *shopNav = [[UINavigationController alloc]initWithRootViewController:shopVc];
-    UINavigationController *creditNav = [[UINavigationController alloc]initWithRootViewController:creditVc];
+//    UINavigationController *creditNav = [[UINavigationController alloc]initWithRootViewController:creditVc];
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVc];
     
     
@@ -44,7 +44,7 @@
     //    NSMutableAttributedString *option2 = [[NSMutableAttributedString alloc] initWithString:@"信用"];
     //    [option2 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#ffffff"] range:NSMakeRange(0,option2.length)];
     
-    tabBarItem2 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"credit_n"] selectedImage:[UIImage imageNamed:@"credit_c"]];
+//    tabBarItem2 = [[BATabBarItem alloc] initWithImage:[UIImage imageNamed:@"credit_n"] selectedImage:[UIImage imageNamed:@"credit_c"]];
     
     //    NSMutableAttributedString * option3 = [[NSMutableAttributedString alloc] initWithString:@"我"];
     //    [option3 addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#ffffff"] range:NSMakeRange(0,option3.length)];
@@ -68,8 +68,8 @@
 //            self.vc.tabBar.hidden = NO;
     
     
-    self.vc.viewControllers = @[shopNav,creditNav,mineNav];
-    self.vc.tabBarItems = @[tabBarItem,tabBarItem2,tabBarItem3];
+    self.vc.viewControllers = @[shopNav,mineNav];
+    self.vc.tabBarItems = @[tabBarItem,tabBarItem3];
     [self.vc setSelectedViewController:shopNav animated:NO];
     
         self.vc.delegate = self;
