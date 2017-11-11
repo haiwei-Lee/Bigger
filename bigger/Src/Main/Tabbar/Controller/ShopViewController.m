@@ -28,8 +28,8 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.title = @"贷款超市";
-//    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:nil];
-//    self.navigationItem.rightBarButtonItem = anotherButton;
+    //    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:nil];
+    //    self.navigationItem.rightBarButtonItem = anotherButton;
     
     
     _productArray = [[NSMutableArray alloc]init];
@@ -78,10 +78,10 @@
     // Do any additional setup after loading the view.
 }
 - (void)tap{
-//    MineViewController * vc =  [MineViewController new];
-//    [self.navigationController pushViewController:vc animated:YES];
-//    self.navigationController.toolbarHidden = YES;
-//    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
+    //    MineViewController * vc =  [MineViewController new];
+    //    [self.navigationController pushViewController:vc animated:YES];
+    //    self.navigationController.toolbarHidden = YES;
+    //    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -188,7 +188,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                     reuseIdentifier:cellIdentifier];
+                                      reuseIdentifier:cellIdentifier];
     }
     
     ProductModel *model = [_productArray objectAtIndex:[indexPath row]];
@@ -286,20 +286,15 @@
     return 80;
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+
