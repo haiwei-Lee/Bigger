@@ -8,8 +8,39 @@
 
 #import "HttpRequestManager.h"
 #import "PPNetworkHelper.h"
+#import "HttpInterfaceConfig.h"
+#import "ProductModel.h"
+#import "YYKit.h"
 
 @implementation HttpRequestManager
+
+
+#pragma mark - 解除绑定
++ (void)getProductList:(id)parameters success:(void(^)(NSArray * productList))success failure:(URequestFailure)failure{
+    [self requestWithURL:kGetProductList parameters:parameters success:^(id response) {
+         NSArray * productList = [NSArray modelArrayWithClass:[ProductModel class] json:[response[@"content"] objectForKey:@"products"]];
+        
+        success(productList);
+    } failure:^(NSString *error) {
+        failure(error);
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*------------------------------------------------------------------------------------------------
  
@@ -25,7 +56,7 @@
     // 设置请求头
 //    [PPNetworkHelper setValue:[UUserManager userMobile] ?[UUserManager userMobile]:@"" forHTTPHeaderField:@"mobile"];
     if (![URL hasPrefix:@"http"]) {
-        URL = [NSString stringWithFormat:@"%@%@",@"kBaseUrl",@"URL"];
+        URL = [NSString stringWithFormat:@"%@%@",kServersAddress,URL];
     }
     NSLog(@"parameter=%@",parameter);
 

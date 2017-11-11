@@ -12,6 +12,7 @@
 #import "DetailWebViewController.h"
 #import "MineViewController.h"
 #import "LoginViewController.h"
+#import "HttpRequestManager.h"
 
 @interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -26,42 +27,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _productArray = [[NSMutableArray alloc]init];
+    [self getProductList];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.title = @"贷款超市";
     //    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:nil];
     //    self.navigationItem.rightBarButtonItem = anotherButton;
     
     
-    _productArray = [[NSMutableArray alloc]init];
-    
-    ProductModel *productModel = [[ProductModel alloc]init];
-    productModel.pImages=@""; //图片
-    productModel.pName=@"顺借"; //产品名
-    productModel.pDesc=@"小额贷款"; //一句话描述
-    productModel.pLevel=@"A"; //产品等级
-    productModel.pPassRate=@"80%"; //通过率
-    productModel.pPayMoney=@"1000"; //借款金额范围
-    productModel.pPayLimit=@"7~30"; //借款期限范围
-    productModel.pLendingRate=@"最快2小时到账"; //放款速度
-    productModel.pApprovalWay=@"自动审批"; //审批方式
-    productModel.pLimitType = @"天";//期限类型
-    productModel.pProductUrl = @"http://t.cn/RWa2KuL";
-    [_productArray addObject:productModel];
-    
-    
-    ProductModel *productModel1 = [[ProductModel alloc]init];
-    productModel1.pImages=@""; //图片
-    productModel1.pName=@"优否·飞碟贷"; //产品名
-    productModel1.pDesc=@"小额贷款"; //一句话描述
-    productModel1.pLevel=@"A"; //产品等级
-    productModel1.pPassRate=@"80%"; //通过率
-    productModel1.pPayMoney=@"1000"; //借款金额范围
-    productModel1.pPayLimit=@"7、14"; //借款期限范围
-    productModel1.pLendingRate=@"最快2小时到账"; //放款速度
-    productModel1.pApprovalWay=@"自动审批"; //审批方式
-    productModel1.pLimitType = @"天";//期限类型
-    productModel1.pProductUrl = @"http://t.cn/RWaLqgA";
-    [_productArray addObject:productModel1];
     
     [self shopTableViewProductList];
     // Do any additional setup after loading the view.
@@ -109,70 +82,71 @@
     [_hotView.layer setBorderColor:HexColor(0x999999ff).CGColor];
     [view addSubview:_hotView];
     
-    ProductModel *productModel = [_productArray objectAtIndex:0];
-    //tips
-    UIImage *image = [UIImage imageNamed:@"xshd"];
-    UIImageView *activityImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, image.size.width, image.size.height)];
-    [activityImage setImage:image];
-    [_hotView addSubview:activityImage];
-    //title
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, image.size.height+15, _hotView.bounds.size.width, 30)];
-    [titleLabel setText:[NSString stringWithFormat:@"%@-%@",productModel.pName,productModel.pDesc]];
-    [_hotView addSubview:titleLabel];
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-    //level
-    UILabel *levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,
-                                                                   titleLabel.bounds.size.height+titleLabel.bounds.size.height, _hotView.bounds.size.width, 30)];
-    [levelLabel setText:[NSString stringWithFormat:@"申请等级：%@",productModel.pLevel]];
-    [_hotView addSubview:levelLabel];
-    [levelLabel setTextAlignment:NSTextAlignmentCenter];
-    [levelLabel setFont:[UIFont systemFontOfSize:16.0f]];
-    
-    
-    UIView *disView = [[UIView alloc]initWithFrame:CGRectMake(20, image.size.height+10+
-                                                              titleLabel.bounds.size.height+levelLabel.bounds.size.height, _hotView.bounds.size.width-40, 30)];
-    [_hotView addSubview:disView];
-    //pLendingRate
-    UILabel *pLendingRate = [[UILabel alloc]initWithFrame:CGRectMake(0,0, disView.bounds.size.width/3, 30)];
-    [pLendingRate setText:[NSString stringWithFormat:@"%@",productModel.pLendingRate]];
-    [pLendingRate setTextColor:HexColor(0x666666ff)];
-    [disView addSubview:pLendingRate];
-    [pLendingRate setTextAlignment:NSTextAlignmentLeft];
-    [pLendingRate setFont:[UIFont systemFontOfSize:14.0f]];
-    
-    UILabel *labelLineLeft = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3, 5, 1, 20)];
-    [labelLineLeft setBackgroundColor:HexColor(0x666666ff)];
-    [disView addSubview:labelLineLeft];
-    
-    //pApprovalWay
-    UILabel *pApprovalWay = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3,0, disView.bounds.size.width/3, 30)];
-    [pApprovalWay setText:[NSString stringWithFormat:@"%@",productModel.pApprovalWay]];
-    [disView addSubview:pApprovalWay];
-    [pApprovalWay setTextAlignment:NSTextAlignmentCenter];
-    [pApprovalWay setFont:[UIFont systemFontOfSize:14.0f]];
-    
-    UILabel *labelLineRight = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3*2, 5, 1, 20)];
-    [labelLineRight setBackgroundColor:HexColor(0x666666ff)];
-    [disView addSubview:labelLineRight];
-    
-    //pLendingRate
-    UILabel *pPassRate = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3*2,0, disView.bounds.size.width/3, 30)];
-    [pPassRate setText:[NSString stringWithFormat:@"通过率：%@",productModel.pPassRate]];
-    [disView addSubview:pPassRate];
-    [pPassRate setTextAlignment:NSTextAlignmentRight];
-    [pPassRate setFont:[UIFont systemFontOfSize:14.0f]];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake((_hotView.bounds.size.width-100)/2, _hotView.bounds.size.height-50, 100, 40)];
-    [button setTitle:@"马上申请" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button.layer setBorderWidth:1.0f];
-    [button.layer setCornerRadius:10.0f];
-    [button.layer setBorderColor:HexColor(0x999999ff).CGColor];
-    [button addTarget:self action:@selector(applyNow) forControlEvents:UIControlEventTouchUpInside];
-    [_hotView addSubview:button];
-    
+    if (_productArray.count > 0) {
+        ProductModel *productModel = [_productArray objectAtIndex:0];
+        //tips
+        UIImage *image = [UIImage imageNamed:@"xshd"];
+        UIImageView *activityImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, image.size.width, image.size.height)];
+        [activityImage setImage:image];
+        [_hotView addSubview:activityImage];
+        //title
+        UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, image.size.height+15, _hotView.bounds.size.width, 30)];
+        [titleLabel setText:[NSString stringWithFormat:@"%@-%@",productModel.name,productModel.pdescription]];
+        [_hotView addSubview:titleLabel];
+        [titleLabel setTextAlignment:NSTextAlignmentCenter];
+        [titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
+        //level
+        UILabel *levelLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,
+                                                                       titleLabel.bounds.size.height+titleLabel.bounds.size.height, _hotView.bounds.size.width, 30)];
+//        [levelLabel setText:[NSString stringWithFormat:@"申请等级：%@",productModel.pLevel]];
+        [_hotView addSubview:levelLabel];
+        [levelLabel setTextAlignment:NSTextAlignmentCenter];
+        [levelLabel setFont:[UIFont systemFontOfSize:16.0f]];
+        
+        
+        UIView *disView = [[UIView alloc]initWithFrame:CGRectMake(20, image.size.height+10+
+                                                                  titleLabel.bounds.size.height+levelLabel.bounds.size.height, _hotView.bounds.size.width-40, 30)];
+        [_hotView addSubview:disView];
+        //pLendingRate
+        UILabel *pLendingRate = [[UILabel alloc]initWithFrame:CGRectMake(0,0, disView.bounds.size.width/3, 30)];
+        [pLendingRate setText:[NSString stringWithFormat:@"%@",productModel.grantrate]];
+        [pLendingRate setTextColor:HexColor(0x666666ff)];
+        [disView addSubview:pLendingRate];
+        [pLendingRate setTextAlignment:NSTextAlignmentLeft];
+        [pLendingRate setFont:[UIFont systemFontOfSize:14.0f]];
+        
+        UILabel *labelLineLeft = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3, 5, 1, 20)];
+        [labelLineLeft setBackgroundColor:HexColor(0x666666ff)];
+        [disView addSubview:labelLineLeft];
+        
+        //pApprovalWay
+        UILabel *pApprovalWay = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3,0, disView.bounds.size.width/3, 30)];
+        [pApprovalWay setText:[NSString stringWithFormat:@"%@",productModel.checktype]];
+        [disView addSubview:pApprovalWay];
+        [pApprovalWay setTextAlignment:NSTextAlignmentCenter];
+        [pApprovalWay setFont:[UIFont systemFontOfSize:14.0f]];
+        
+        UILabel *labelLineRight = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3*2, 5, 1, 20)];
+        [labelLineRight setBackgroundColor:HexColor(0x666666ff)];
+        [disView addSubview:labelLineRight];
+        
+        //pLendingRate
+        UILabel *pPassRate = [[UILabel alloc]initWithFrame:CGRectMake(disView.bounds.size.width/3*2,0, disView.bounds.size.width/3, 30)];
+        [pPassRate setText:[NSString stringWithFormat:@"通过率：%@",productModel.grantrate]];
+        [disView addSubview:pPassRate];
+        [pPassRate setTextAlignment:NSTextAlignmentRight];
+        [pPassRate setFont:[UIFont systemFontOfSize:14.0f]];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake((_hotView.bounds.size.width-100)/2, _hotView.bounds.size.height-50, 100, 40)];
+        [button setTitle:@"马上申请" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button.layer setBorderWidth:1.0f];
+        [button.layer setCornerRadius:10.0f];
+        [button.layer setBorderColor:HexColor(0x999999ff).CGColor];
+        [button addTarget:self action:@selector(applyNow) forControlEvents:UIControlEventTouchUpInside];
+        [_hotView addSubview:button];
+    }
     return view;
 }
 
@@ -279,13 +253,28 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return _productArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
 
+
+#pragma mark - 网络请求
+
+- (void)getProductList{
+    [HttpRequestManager getProductList:@{@"page":@"1",@"rows":@"1"} success:^(NSArray * _Nonnull productList) {
+        [_productArray removeAllObjects];
+        [_productArray addObjectsFromArray:productList];
+        [_plTableView reloadData];
+    } failure:^(NSString * _Nullable error) {
+        
+    }];
+     
+     //removeThirdBindStatus:@{@"uid":user.uid,@"type":[NSString stringWithFormat:@"%ld",type],@"token":[UTokenManager token]} success:^(id response) {
+        
+}
 /*
  #pragma mark - Navigation
  

@@ -7,6 +7,7 @@
 //
 
 #import "DetailWebViewController.h"
+#import "HttpRequestManager.h"
 
 @interface DetailWebViewController ()
 

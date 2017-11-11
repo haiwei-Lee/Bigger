@@ -37,6 +37,7 @@
 		E11EAD0E1FB5940500568131 /* ProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		E11EAD101FB69BF900568131 /* DetailWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailWebViewController.h; sourceTree = "<group>"; };
 		E11EAD111FB69BF900568131 /* DetailWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailWebViewController.m; sourceTree = "<group>"; };
+		E11EAD131FB6D1F700568131 /* HttpInterfaceConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpInterfaceConfig.h; sourceTree = "<group>"; };
 		E196CC811FB44FA500CE0C98 /* CreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditViewController.h; sourceTree = "<group>"; };
 		E196CC821FB44FA500CE0C98 /* CreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditViewController.m; sourceTree = "<group>"; };
 		E196CC831FB44FA500CE0C98 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3A523D1FB69DEE00A17830 /* MacroConfig.h */,
+				E11EAD131FB6D1F700568131 /* HttpInterfaceConfig.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
