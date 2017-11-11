@@ -7,6 +7,8 @@
 //
 
 #import "ShopViewController.h"
+#import "MineViewController.h"
+#import "LoginViewController.h"
 
 @interface ShopViewController ()
 
@@ -18,11 +20,16 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.title = @"贷款超市";
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:nil];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(tap)];
     self.navigationItem.rightBarButtonItem = anotherButton;
     // Do any additional setup after loading the view.
 }
-
+- (void)tap{
+//    MineViewController * vc =  [MineViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    self.navigationController.toolbarHidden = YES;
+//    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

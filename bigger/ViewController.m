@@ -14,7 +14,7 @@
 #import "CreditViewController.h"
 #import "MineViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<BATabBarControllerDelegate>
 @property (nonatomic, strong) BATabBarController* vc;
 
 @end
@@ -64,20 +64,22 @@
     self.vc.tabBarItemLineWidth = 1.0;
     
     //Hides the tab bar when true
-    //        self.vc.hidesBottomBarWhenPushed = YES;
-    //        self.vc.tabBar.hidden = YES;
+//    self.vc.hidesBottomBarWhenPushed = YES;
+//            self.vc.tabBar.hidden = NO;
     
     
     self.vc.viewControllers = @[shopNav,creditNav,mineNav];
     self.vc.tabBarItems = @[tabBarItem,tabBarItem2,tabBarItem3];
     [self.vc setSelectedViewController:shopNav animated:NO];
     
-    //    self.vc.delegate = self;
+        self.vc.delegate = self;
     [self.view addSubview:self.vc.view];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
+-(void)tabBarController:(BATabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"%%%@",[viewController class]);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
