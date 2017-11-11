@@ -7,6 +7,7 @@
 //
 
 #import "MineViewController.h"
+#import "GlobalDefine.h"
 
 @interface MineViewController ()
 
@@ -16,13 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor yellowColor]];
+    self.title = @"我";
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+//    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:nil];
+//    self.navigationItem.rightBarButtonItem = anotherButton;
     // Do any additional setup after loading the view.
+    
+    [self userInfo];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)userInfo{
+    UIView *userInfoView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 240)];
+    [userInfoView setBackgroundColor:HexColor(0xccccccff)];
+    [self.view addSubview:userInfoView];
+    
+    UIImage *image = [UIImage imageNamed:@"userinfo"];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((
+                                                                           self.view.bounds.size.width-128)/2,
+                                                                          16,128, 128)];
+    [imageView setImage:image];
+    [userInfoView addSubview:imageView];
 }
 
 /*
