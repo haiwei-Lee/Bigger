@@ -29,9 +29,9 @@
 @property (copy, nonatomic) NSString *checktype;//A; 审核方式
 @property (copy, nonatomic) NSString *logo;//"https://www.baidu.com/img/baidu_jgylogo3.gif"; logo
 @property (copy, nonatomic) NSString *name;//1; 产品名称
-@property (copy, nonatomic) NSString *grantrate;//"0.8"; 放款概率
+@property (nonatomic) float grantrate;//"0.8"; 放款概率
 @property (copy, nonatomic) NSString *grantspeed;//1; 放款速度
-@property (copy, nonatomic) NSString *pdescription;//1; 描述
+@property (copy, nonatomic) NSString *descripe;//1; 描述
 @property (copy, nonatomic) NSString *money;//"500,1000,1500"; 借款金额
 
 @property (copy, nonatomic) NSString *acturltransfertype;//A; 实际到账方式

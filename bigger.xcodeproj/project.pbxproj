@@ -10,6 +10,7 @@
 		B839CDBBC8E01CC1F0385A00 /* libPods-bigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCD7C6F0ED8B956FD27071D /* libPods-bigger.a */; };
 		E11EAD0F1FB5940500568131 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E11EAD0E1FB5940500568131 /* ProductModel.m */; };
 		E11EAD121FB69BF900568131 /* DetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11EAD111FB69BF900568131 /* DetailWebViewController.m */; };
+		E11EAD181FB6EAD100568131 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E11EAD171FB6EAD000568131 /* FileManager.m */; };
 		E196CC871FB44FA500CE0C98 /* CreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC821FB44FA500CE0C98 /* CreditViewController.m */; };
 		E196CC881FB44FA500CE0C98 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC841FB44FA500CE0C98 /* MineViewController.m */; };
 		E196CC891FB44FA500CE0C98 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E196CC861FB44FA500CE0C98 /* ShopViewController.m */; };
@@ -38,6 +39,8 @@
 		E11EAD101FB69BF900568131 /* DetailWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailWebViewController.h; sourceTree = "<group>"; };
 		E11EAD111FB69BF900568131 /* DetailWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailWebViewController.m; sourceTree = "<group>"; };
 		E11EAD131FB6D1F700568131 /* HttpInterfaceConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpInterfaceConfig.h; sourceTree = "<group>"; };
+		E11EAD161FB6EAD000568131 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		E11EAD171FB6EAD000568131 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		E196CC811FB44FA500CE0C98 /* CreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditViewController.h; sourceTree = "<group>"; };
 		E196CC821FB44FA500CE0C98 /* CreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditViewController.m; sourceTree = "<group>"; };
 		E196CC831FB44FA500CE0C98 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -124,9 +127,27 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E11EAD141FB6EAD000568131 /* ToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				E11EAD151FB6EAD000568131 /* FileManager */,
+			);
+			path = ToolKit;
+			sourceTree = "<group>";
+		};
+		E11EAD151FB6EAD000568131 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				E11EAD161FB6EAD000568131 /* FileManager.h */,
+				E11EAD171FB6EAD000568131 /* FileManager.m */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
 		E196CC7D1FB44FA500CE0C98 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				E11EAD141FB6EAD000568131 /* ToolKit */,
 				E11EAD091FB552E900568131 /* Constant */,
 				FB3A523C1FB69DB700A17830 /* Config */,
 				FB3A52381FB6983200A17830 /* Login */,
@@ -401,6 +422,7 @@
 				FBCCD6601FB1826000C75C12 /* ViewController.m in Sources */,
 				FB3A52481FB6C77400A17830 /* UIButton+UCountDown.m in Sources */,
 				FB9214FA1FB3F9440075A403 /* PPNetworkHelper.m in Sources */,
+				E11EAD181FB6EAD100568131 /* FileManager.m in Sources */,
 				FB9214F91FB3F9440075A403 /* PPNetworkCache.m in Sources */,
 				E196CC871FB44FA500CE0C98 /* CreditViewController.m in Sources */,
 				FB3A523B1FB6984C00A17830 /* LoginViewController.m in Sources */,

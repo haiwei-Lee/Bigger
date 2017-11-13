@@ -11,6 +11,7 @@
 #import "HttpInterfaceConfig.h"
 #import "ProductModel.h"
 #import "YYKit.h"
+#import "FileManager.h"
 
 @implementation HttpRequestManager
 
@@ -19,6 +20,8 @@
 + (void)getProductList:(id)parameters success:(void(^)(NSArray * productList))success failure:(URequestFailure)failure{
     [self requestWithURL:kGetProductList parameters:parameters success:^(id response) {
          NSArray * productList = [NSArray modelArrayWithClass:[ProductModel class] json:[response[@"content"] objectForKey:@"products"]];
+        
+        [FileManager parsingDictionary:response[@"content"]];
         
         success(productList);
     } failure:^(NSString *error) {
